@@ -1,15 +1,15 @@
+import sys
 try:
     import pretty_midi
 except ImportError:
     import os
-    os.system("pip install pretty_midi")
+    os.system(f"{sys.orig_argv[0]} -m pip install pretty_midi")
     import pretty_midi
 try:
     import uflash
 except ImportError:
     import os
-    os.system("pip install uflash")
-import sys
+    os.system(f"{sys.orig_argv[0]} -m pip install uflash")
 from tkinter import filedialog, Tk, simpledialog
 
 def extract_main_melody(midi_file_path, track_index):
